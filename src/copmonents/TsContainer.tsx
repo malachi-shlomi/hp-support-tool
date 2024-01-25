@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import Options from "./Options";
+import Ts from "./Ts";
 
 function TsContainer() {
+    const { nav } = useSelector((state: any) => state.case);
+
+    const identifyIssueNavs: string[] = ['products', 'parts', 'issues']
+    const tsNavs: string[] = ['ts']
 
     return (
-        <div className="pd-30">
-            <div className="alert alert-success">
-                <h1>Typescript</h1>
-            </div>
+        <div className="ts-container">
+            {identifyIssueNavs.includes(nav) && <Options />}
+            {tsNavs.includes(nav) && <Ts />}
         </div>
     );
 }

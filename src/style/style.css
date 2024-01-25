@@ -7,46 +7,113 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main-page{
+  width: 100%;
+  height: 100vh;
 }
 
-.App {
-  text-align: center;
+.left-panel {
+  width: 20%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.center-panel {
+  width: 60%;
+  padding: 30px 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.right-panel {
+  width: 20%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ts-container {
+  margin-top: 100px;
+  height: 600px;
+}
+
+.options-con{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: auto;
+  gap: 40px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.options-con .options{
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.options-con .options .buttons-con{
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.option-button{
+  min-width: 80px;
+  
+  &:hover{
+    background-color: #efefef;
   }
-  to {
-    transform: rotate(360deg);
+
+}
+
+.item {
+  width: fit-content;
+  box-shadow: 0 2px 7px #74747735;
+  border:none;
+  background-color: #fff;
+  font-size: 18px;
+  transition: background-color 0.2s ease-out;
+  border-radius: 7px;
+  padding: 10px 15px ;
+}
+
+.checks-con {
+
+}
+
+.check-input {
+  width: fit-content;
+  min-width: 150px;
+}
+
+.check-input .title{
+  margin: 5px 0 ;
+  font-size: 20px;
+}
+
+.check-input .option{
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+
+  &.bad:hover{
+    background-color: rgb(227, 135, 135);
   }
+
+  &.good:hover{
+    background-color: rgb(134, 212, 128)
+  }
+
+  &.neutral:hover{
+    background-color: rgb(172, 172, 172);
+  }
+
+  & .icon{
+    margin: 0 5px 0 0;
+  }
+  
+}
+
+.add-link-con {
+  width: 100%;
+
+  & .link-input {
+    border: none;
+    outline: none;
+    padding: 5px 18px;
+  }
+}
+
+.link-tag {
+  background-color: #eeeeee;
+  padding: 5px 15px;
 }

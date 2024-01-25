@@ -1,10 +1,10 @@
-import TsContainer from "./copmonents/TsContainer";
+import MainPage from "./copmonents/MainPage";
 
 function App() {
   return (
-    <div className="App bg-red">
-      <TsContainer />
-    </div>
+      <div className="App bg-red">
+        <MainPage />
+      </div>
   );
 }
 
