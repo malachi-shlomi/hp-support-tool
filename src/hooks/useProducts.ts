@@ -7,9 +7,9 @@ interface HookResult {
 }
 
 const useProducts = (): HookResult => {
-  const { nav } = useSelector((state: any) => state.case);
+  const { navigation } = useSelector((state: any) => state.case);
 
-  if (nav === "products") {
+  if (navigation === "products") {
     return { products };
   }
 

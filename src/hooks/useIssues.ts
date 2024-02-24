@@ -1,33 +1,39 @@
 import { useSelector } from "react-redux";
 import { Issue, Part, PartIssue } from "../lib/interfaces";
-import issues from "../data/issues";
+import {issues, partIssues} from "../data/issues";
 import parts from "../data/parts";
-import partIssues from "../data/partIssues";
 
 interface HookResult {
-  parts: Part[];
-  issues: Issue[];
+  parts?: Part[];
+  issues?: (Issue | PartIssue)[];
+  subParts?: Part[];
 }
 
 const useIssues = (): HookResult => {
-  const { nav, cProduct, cPart, caseProps } = useSelector((state: any) => state.case);
+  const { caseProps, navigation } = useSelector((state: any) => state.case);
+  const { product, part } = caseProps;
 
-  if (nav === "parts") {
-    const productIssues = issues.filter((issue: Issue) => issue.productDependancies.every(dependancy => caseProps[dependancy]) && issue.showInMainPage);
+  if (navigation === "subparts") {       
+    const subParts = part.subParts.filter((part: Part) => part.productDependancies.every(dependancy => product[dependancy]));
+    return { subParts }
+  }
+  
+  if (navigation === "parts") {
 
-    const productParts = parts.filter((part: Part) => {
-      return part.productDependancies.every(dependency => caseProps[dependency]);
-    });
+    const productIssues = issues.filter((issue: Issue) => issue.productDependancies?.every(dependancy => product[dependancy]));
 
-    return { issues: productIssues, parts: productParts };
+    const productParts = parts.filter((part: Part) => part.productDependancies.every(dependancy => product[dependancy]));
+    
+    return {issues: productIssues, parts: productParts };
   }
 
-  if (nav === "issues") {
-    const issuesOfPart = issues.filter((issue: Issue) => cPart.issues.includes(issue.id));
-    return { issues: issuesOfPart, parts: [] };
+  if (navigation === "issues") {
+    
+    const issuesOfPart = partIssues.filter((issue: Issue) => issue.partDependancies?.every(dependancy => part[dependancy]));
+    return { issues: issuesOfPart };
   }
 
-  return { issues: [], parts: [] };
+  return { };
 };
 
 export default useIssues;

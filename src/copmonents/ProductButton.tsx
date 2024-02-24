@@ -1,9 +1,7 @@
 import React from 'react';
-import { Issue, Product, Part } from '../lib/interfaces';
+import { Product } from '../lib/interfaces';
 import { useDispatch } from 'react-redux';
-import { setIssue } from '../store/reducers/caseSlice';
 
-type Item = Product;
 
 interface Props {
   item: Product;

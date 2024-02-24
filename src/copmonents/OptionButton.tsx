@@ -1,7 +1,6 @@
 import React from 'react';
-import { Issue, Product, Part } from '../lib/interfaces';
+import { Issue, Part } from '../lib/interfaces';
 import { useDispatch } from 'react-redux';
-import { setIssue } from '../store/reducers/caseSlice';
 
 type Item = Issue | Part;
 
@@ -18,7 +17,7 @@ const OptionsButton: React.FC<Props> = ({item, action}) => {
   };
 
   return (
-    <div className='option-button btn item' onClick={() => handleClick(item)}>
+    <div className='option-button item' onClick={() => handleClick(item)}>
       {item.desc}
     </div>
   );

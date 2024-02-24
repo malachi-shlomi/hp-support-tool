@@ -28,6 +28,8 @@ const products: Product[] = [
         isAComputer: true,
         hasDiagnostics: true,
         isALaptop: true,
+        hasPorts: true,
+        hasNetworkPort: true
     },
     {
         productId: 2,
@@ -57,7 +59,8 @@ const products: Product[] = [
         isAComputer: false,
         hasDiagnostics: false,
         isAMonitor: true,
-        isALaptop: false
+        isALaptop: false,
+        hasPorts: true
     },
     {
         productId: 3,
@@ -85,7 +88,10 @@ const products: Product[] = [
         hasMicrophone: false,
         hasHeadphoneJack: false,
         isAComputer: true,
-        hasDiagnostics: true
+        hasDiagnostics: true,
+        hasPorts: true,
+        hasBeepCode: true,
+        hasNetworkPort: true
     },
     {
         productId: 4,
@@ -113,7 +119,10 @@ const products: Product[] = [
         hasMicrophone: false,
         hasHeadphoneJack: false,
         isAComputer: true,
-        hasDiagnostics: true
+        hasDiagnostics: true,
+        hasPorts: true,
+        hasBeepCode: true,
+        hasNetworkPort: true
     },
     {
         productId: 5,
@@ -140,7 +149,9 @@ const products: Product[] = [
         hasEthernet: false,
         hasMicrophone: false,
         isAComputer: true,
-        hasDiagnostics: true
+        hasDiagnostics: true,
+        hasPorts: true,
+        hasNetworkPort: true
     },
 
 ];

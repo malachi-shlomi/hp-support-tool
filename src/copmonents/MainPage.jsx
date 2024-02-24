@@ -1,22 +1,21 @@
 import TsContainer from "./TsContainer";
-import { useDispatch, useSelector } from "react-redux";
-import { newCase } from "../store/reducers/caseSlice";
+import SideMenu from "./SideMenu/SideMenu";
+import GoBackArrow from "./GoBackArrow";
+import { useSelector } from "react-redux";
 
+function MainPage() {
+    const { history } = useSelector((state) => state.case);
 
-function MainPage(props) {
-    const dispatch = useDispatch();
-    const { cProduct, cPart ,cIssues} = useSelector((state) => state.case );
-    
     return (
-        <div className="main-page d-flex w-100">
-            <div className="left-panel">
+        <div className="main-page d-flex">
+            <div className="content-panel left-panel">
+                <SideMenu />
             </div>
-            <div className="center-panel w-2">
-            <div className="btn btn-primary" onClick={() => dispatch(newCase())}>New Case</div>
-                <TsContainer />
-            </div>
-            <div className="right-panel">
-            
+            <div className="center-panel content-panel">
+                {history.length > 0 && <GoBackArrow />}
+                <div className="content-center">
+                    <TsContainer />
+                </div>
             </div>
         </div>
     );
