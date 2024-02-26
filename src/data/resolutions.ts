@@ -39,6 +39,10 @@ const resolutions: Resolution[] = [
         note: "Told the customer that the issue is in the network and not in the computer.",
         dependancies: resolutionsDependancies.networkIssue
     },
+    {   desc: "Battery is ok",
+        note: "I explained to the customer that the Battery capacity is ok and it might be a software issue.",
+        dependancies: resolutionsDependancies.batteryIsOk
+    },
 ]
 
 export default resolutions;

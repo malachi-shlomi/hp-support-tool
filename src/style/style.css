@@ -94,8 +94,6 @@ input, textarea {
   background-color: var(--active-bg);
 }
 
-
-
 .content-panel{
   height: 100vh;
   display: flex;
@@ -105,16 +103,14 @@ input, textarea {
 .center-panel {
   flex: 1;
   min-width: 600px;
-  /* padding: 0 140px; */
   max-height: 100vh;
   position: relative;
 }
 
 .content-center{
   min-height: 100%;
-  padding: 30px 150px;
+  padding: 30px 12%;
   overflow: auto; 
-  
 }
 
 .ts-container{
@@ -133,11 +129,33 @@ input, textarea {
 }
 
 .left-panel{
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
   width: 300px;
   max-width: 300px;
   background-color: var(--menu-bg);
   min-height: 400px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .left-panel{
+    display: none;
+  }
+
+  .center-center {
+    min-width: 0px;
+  }
+
+  .content-center{
+    padding: 30px 5%;
+  }
+
+  .ts-container{
+    overflow: hidden;
+    min-width: 0px;
+    width: 100%;
+    position: relative;
+  }
 }
 
 .options-con{
@@ -164,6 +182,10 @@ input, textarea {
   border-radius: 7px;
 }
 
+.checks-con{
+  flex-wrap: wrap;
+}
+
 .check-input {
   width: fit-content;
   min-width: 150px;
@@ -179,6 +201,8 @@ input, textarea {
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out;
+  text-wrap: nowrap;
+  white-space: nowrap;
 
   &:hover,
     &.active {
@@ -316,6 +340,7 @@ input, textarea {
   border: var(--light-border);
   font-size: 16px;
   padding: 4px 14px;
+  white-space: nowrap;
 }
 
 .resolution-con {
@@ -551,14 +576,23 @@ textarea{
   
 }
 
-.notes-list-con{
+.notes-list-con {
   max-height: 60vh;
-  overflow: scroll;
+  overflow: auto;
 }
+
+.notes-list-con::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.notes-list-con::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
 
 .note-button{
   background-color: inherit;
-  min-height: 35px;
+  min-height: 37px;
   padding: 5px 10px;
 
   &.add{
@@ -635,6 +669,7 @@ textarea{
   padding: 5px 12px;
   gap: 5px;
   text-wrap: nowrap;
+  white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
 
@@ -653,3 +688,12 @@ textarea{
   height: 20px !important;
   size: 30px;
 }
+
+.github-link{
+
+  font-size: 14px;
+}
+
+.submit-api-key{
+    /* width: 100px; */
+  }

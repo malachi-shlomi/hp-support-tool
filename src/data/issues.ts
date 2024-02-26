@@ -21,7 +21,7 @@ export const issues: Issue[] = [
         possibleSolutions: ["startSystemTest", "updateDrivers", "format", "checkFrequency", "getErrorMessage"],
         note: 'There are Blue Screens',
     },
-    {   desc: "PC Doesn't Boot",
+    {   desc: "Doesn't Boot to OS",
         productDependancies: ["isAComputer"],
         possibleSolutions: ["startSystemTest", "format", "getErrorMessage", "QuickDiskTest", "format"],
         note: "The PC doesn't boot to OS",
@@ -31,12 +31,17 @@ export const issues: Issue[] = [
         possibleSolutions: ["tryAnotherPC"],
         note: "The Monitor turns on, but there's no Display",
     },
+    {   desc: "Doesn't Charge",
+        productDependancies: ["hasCharger"],
+        possibleSolutions: ["checkAnotherCharger", "checkIfChargingLightIsOn"],
+        note: "The PC Doesn't charge",
+    },
 ];
 
 export const partIssues: Issue[] = [
     {   desc: "Not Working",
         partDependancies: ["canStopWorking"],
-        possibleSolutions: ["updateDrivers", "doDDU", "testInDiagnostics", "updateBIOS", "format", "tryAnotherKeyboard", "tryAnotherMouse", "checkFrequency", "checkOtherNetworks", "checkOtherCables", "openCameraShutter"]
+        possibleSolutions: ["updateDrivers", "doDDU", "testInDiagnostics", "updateBIOS", "format", "tryAnotherKeyboard", "tryAnotherMouse", "checkFrequency", "checkOtherNetworks", "checkOtherCables", "openCameraShutter", "tryAnotherPC"]
     },
     {   desc: "Flickering",
         partDependancies: ["canFlicker"],
@@ -76,11 +81,13 @@ export const partIssues: Issue[] = [
         note: 'The Battery inflated'
     },
     {   desc: "Some Keys Aren't Working",
+        problemDescriptionShort: "Keys Doesn't work",
         partDependancies: ["hasKeys"],
         possibleSolutions: ["testInDiagnostics", "format", "tryAnotherKeyboard"],
         note: 'Some keys on the Keyboard are not working'
     },
     {   desc: "90B Error",
+        problemDescriptionShort: "Error",
         partDependancies: ["canHave90B"],
         possibleSolutions: ["updateBIOS"],
         note: 'There is an error message related to the Fan (90B)'

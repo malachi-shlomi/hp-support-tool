@@ -25,10 +25,8 @@ const useBattery = (): HookResult => {
     const currentC = Number(current);
     const designC = Number(design);
 
-    
     let batteryPercentage = (currentC / designC * 100).toFixed(1) as unknown as number
 
-    
     if (batteryPercentage >= 100) {
         batteryPercentage = 100;
     }

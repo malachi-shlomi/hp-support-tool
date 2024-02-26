@@ -28,7 +28,7 @@ const checks: Check[] = [
         options: [
             { title: 'Same',  type: 'bad'  , code: 'CHARGER_SAME', effects: { BAD_CHARGER: false }},
             { title: 'Works', type: 'good' , code: 'CHARGER_WORKS', effects: { BAD_CHARGER: true }},
-            { title: "Doesn't have", type: 'neutral', code: 'DH_CHARGER'}
+            { title: "Doesn't have", type: 'neutral', code: 'DH_CHARGER', effects: { BAD_CHARGER: null }}
         ],
         dependancies: checksDependancies.needToCheckAnotherCharger
     },

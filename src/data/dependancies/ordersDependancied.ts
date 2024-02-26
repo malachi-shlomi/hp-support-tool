@@ -10,9 +10,10 @@ const ordersDependancies: { [key: string]: Dependacy } = {
         const { productName } = product;
 
         const portIssue: boolean = (
-            (['All the ports', 'USB', 'HDMI', 'Type-C', 'Display Port','Network Port'].includes(part.desc)) && 
+            (['All the ports', 'USB', 'HDMI', 'Type-C', 'Display Ports','Network Port'].includes(part.desc)) && 
             !situation.BAD_CABLES && 
-            situation.HARDWARE_ISSUE !== false
+            situation.HARDWARE_ISSUE !== false &&
+            product.isAComputer
         )
 
         const turnOnIssue: boolean = (
@@ -44,7 +45,7 @@ const ordersDependancies: { [key: string]: Dependacy } = {
     charger: ({ product, situation }) => {
         return (
             product.hasCharger && 
-            situation.BAD_CHARGER
+            situation.BAD_CHARGER === true || situation.BAD_CHARGER === null
         )
     },
     keyboard: ({  situation, part }) => {
@@ -53,12 +54,16 @@ const ordersDependancies: { [key: string]: Dependacy } = {
             situation.HARDWARE_ISSUE
         )
     },
-    ram: ({  situation }) => {
-        return false
+    ram: ({  beepCode }) => {
+        const { red, white } = beepCode;
+        return red === "3" && white === "2"
     },
     monitor: ({  situation, product }) => {
         return (
-            product.productName === 'Monitor' && !situation.BAD_CABLES && situation.HARDWARE_ISSUE !== false
+            product.productName === 'Monitor' && 
+            !situation.BAD_CABLES && 
+            situation.HARDWARE_ISSUE !== false &&
+            !situation.NEED_FOLLOW_UP
         )
     },
     battery: ({ situation, issue }) => {
@@ -109,10 +114,17 @@ const ordersDependancies: { [key: string]: Dependacy } = {
             situation.HARDWARE_ISSUE
         )
     },
-    camera: ({ situation, part }) => {
+    camera: ({ situation, part, product }) => {
         return (
             part.desc === 'Camera' && 
-            situation.ISSUE_IN_SPESIFIC_APP == false
+            situation.ISSUE_IN_SPESIFIC_APP == false &&
+            product.isAComputer
+        )
+    },
+    dcin: ({ situation, issue }) => {
+        return (
+            issue.desc === "Doesn't Charge" && 
+            (situation.BAD_CHARGER === false || situation.BAD_CHARGER === null)
         )
     },
 }

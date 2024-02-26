@@ -7,8 +7,7 @@ const writeBatteryReport: (caseProps: CaseProps) => string = (caseProps) => {
     
     return `In the Battery report,
 the battery capacity is ${current} / ${design} mAh.
-(down by ${(100 - batteryPercentage).toFixed(1)}%)
-`
+(down by ${(100 - batteryPercentage).toFixed(1)}%)`
     
 }   
 

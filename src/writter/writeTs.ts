@@ -8,7 +8,7 @@ import writeIssue from "./writeIssue";
 import writeLink from "./writeLink";
 
 
-const writeTs: (caseProps: CaseProps) => string = (caseProps) => {
+const writeTs: (caseProps: CaseProps) => { ts: string } = (caseProps) => {
     const TS_SECTIONS: {section: string, writer: (caseProps: CaseProps) => string | undefined, dependancy: boolean}[] = [
         {
             section: "issue",
@@ -19,6 +19,11 @@ const writeTs: (caseProps: CaseProps) => string = (caseProps) => {
             section: "beepCodeText",
             writer: writeBeepCode,
             dependancy: Boolean(caseProps.beepCode.red && caseProps.beepCode.white && caseProps.beepCode.error)
+        },
+        {
+            section: "errorMessage",
+            writer: writeErrorMesssage,
+            dependancy: Boolean(caseProps.errorMessage?.length)
         },
         {
             section: "pictureLink",
@@ -40,16 +45,11 @@ const writeTs: (caseProps: CaseProps) => string = (caseProps) => {
             writer: writeBatteryReport,
             dependancy: Boolean(caseProps.batteryCapacity.current && caseProps.batteryCapacity.design)
         },
-        {
-            section: "errorMessage",
-            writer: writeErrorMesssage,
-            dependancy: Boolean(caseProps.errorMessage?.length)
-        },
     ]
 
     const relevantTsSections = TS_SECTIONS.filter(({dependancy}) => dependancy)
     const ts = relevantTsSections.map(({writer}) => writer(caseProps)).join("\n");
-    return ts;
+    return { ts };
 
 }
 

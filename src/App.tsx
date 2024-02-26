@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import MainPage from "./copmonents/MainPage";
+import MainPage from "./UI/System/MainPage";
 import { useSelector } from "react-redux";
-import Modal from "./copmonents/Modal";
+import Modal from "./UI/System/Modal";
 
 function App() {
   const { darkMode } = useSelector((state: any) => state.case.settings);

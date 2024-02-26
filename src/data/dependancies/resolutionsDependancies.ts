@@ -52,6 +52,14 @@ const resolutionsDependancies: { [key: string]: Dependacy } = {
             situation.BAD_NETWORK
         )
     },
+    batteryIsOk: ({situation, product, batteryCapacity}) => {
+        return (
+            Boolean(batteryCapacity.design) &&
+            Boolean(batteryCapacity.design) &&
+            situation.batteryPercentage > 85
+        );
+
+    },
 }
 
 export default resolutionsDependancies;

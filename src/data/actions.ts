@@ -46,6 +46,14 @@ const actions: Action[] = [
         dependancies: actionsDependancies.needToOpenCameraShutter,
         code: 'CAMERA_SHUTTER',
     },
+    {   desc: 'Firmware Update',
+        dependancies: actionsDependancies.needFirmwareUpdate,
+        code: 'FIRMWARE_UPDATE',
+        effects: {
+            NEED_LMI: true,
+            NEED_FOLLOW_UP: true
+        }
+    },
 
 ]
 

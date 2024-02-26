@@ -45,6 +45,13 @@ const actionsDependancies: { [key: string]: Dependacy } = {
             part.hasShutter
         )
     },
+    needFirmwareUpdate: ({ issue, product, situation, part }) => {
+        return (
+            product.isAMonitor && 
+            part.canBeFixByFirmwareUpdate
+        )
+    },
+    
 }
 
 export default actionsDependancies;

@@ -1,6 +1,5 @@
 import { createSlice, current } from '@reduxjs/toolkit';
 import { CaseProps, Frequency } from '../../lib/interfaces'
-import writeTS, { generateNote } from '../../writter';
 import writeTs from '../../writter/writeTs';
 import writeTemplate from '../../writter/writeTemplate';
 import writeIssue from '../../writter/writeIssue';
@@ -91,6 +90,7 @@ const caseSlice = createSlice({
             state.navigation = last?.navigation || 'products';
             state.caseProps = last?.caseProps || initialState.caseProps;
             state.note = last?.note || initialState.note;
+            state.stickyNotes.openIndex = null;
             state.history = history;
         },
         setProduct: (state, action) => {
@@ -211,7 +211,7 @@ const caseSlice = createSlice({
             });
 
             const { resolution } = action.payload;
-            const { ts }: {ts: string, resolution: string}  = generateNote(current(state.caseProps));
+            const { ts }: { ts: string } = writeTs(current(state.caseProps));
 
             if (resolution){
                 state.note.resolution = resolution;
@@ -248,6 +248,11 @@ const caseSlice = createSlice({
             state.navigation = action.payload;
         },
         addStickyNote: (state) => {
+            state.history?.push({
+                navigation: state.navigation,
+                caseProps: {...state.caseProps}
+            });
+
             const noteTitle = `New Note`
             state.stickyNotes.notes.push({
                 title: noteTitle,
@@ -284,7 +289,11 @@ const caseSlice = createSlice({
             const { index } = action.payload;
 
             if (state.stickyNotes.openIndex === index) {
+                state.caseProps = initialState.caseProps;
                 state.navigation = 'products';
+                state.note = initialState.note;
+                state.consTemplate = initialState.consTemplate;
+                state.history = [];
                 state.stickyNotes.openIndex = null;
             };
             if (state.stickyNotes.openIndex !== null && state.stickyNotes.openIndex > index) {

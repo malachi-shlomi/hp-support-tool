@@ -28,6 +28,7 @@ export interface Product {
     isAMonitor?: boolean;
     isALaptop?: boolean;
     hasPorts: boolean;
+    hasTypeC?: boolean;
     hasBeepCode?: boolean;
     hasNetworkPort?: boolean;
 }
@@ -63,7 +64,8 @@ export interface Part {
     canHave90B?: boolean,
     canWorkWithOtherCables?: boolean,
     canBeFixByDisablingSoundEnhancements?: boolean,
-    hasShutter?: boolean
+    hasShutter?: boolean,
+    canBeFixByFirmwareUpdate?: boolean
 }
 
 export interface Properties {
@@ -77,7 +79,8 @@ export interface Issue {
     possibleSolutions?: string[],
     effects?: Properties,
     note?: string
-    solvedNote?: string
+    solvedNote?: string,
+    problemDescriptionShort?: string,
 }
 
 export interface Check {

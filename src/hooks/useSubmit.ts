@@ -37,7 +37,12 @@ const useSubmit = (): HookResult => {
         {
             name: "Resolution",
             value: resolution
-        }
+        },
+        {
+            name: "Leave blank",
+            value: ''
+        },
+
     ]
 
     const submit = async () => {
@@ -48,7 +53,7 @@ const useSubmit = (): HookResult => {
             return acc + `|${field.name}: ${field.value}\n\n`
         }, "")
 
-        const statusNote: string = '\n{START CASE SUMMERY}\n\n' + note + '{END CASE SUMMERY}\n'
+        const statusNote: string = '\n{START CASE SUMMERY}\n\n' + note + '{END CASE SUMMERY}\n\n'
 
         
         clipboardCopy(statusNote);

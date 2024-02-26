@@ -26,7 +26,7 @@ const orders: Order[] = [
     {   desc: 'Open CSR for Monitor',
         dependancies: ordersDependancies.monitor
     },
-    {   desc: 'Open call for battery',
+    {   desc: 'Open call for Battery',
         dependancies: ordersDependancies.battery
     },
     {   desc: 'Open call for Touchpad',
@@ -49,6 +49,9 @@ const orders: Order[] = [
     },
     {   desc: 'Open call for Camera',
         dependancies: ordersDependancies.camera
+    },
+    {   desc: 'Open call for DC-In',
+        dependancies: ordersDependancies.dcin
     },
     
 ]

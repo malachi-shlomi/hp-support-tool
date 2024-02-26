@@ -29,6 +29,7 @@ const products: Product[] = [
         hasDiagnostics: true,
         isALaptop: true,
         hasPorts: true,
+        hasTypeC: true,
         hasNetworkPort: true
     },
     {
@@ -58,6 +59,7 @@ const products: Product[] = [
         hasHeadphoneJack: false,
         isAComputer: false,
         hasDiagnostics: false,
+        hasTypeC: true,
         isAMonitor: true,
         isALaptop: false,
         hasPorts: true
@@ -85,6 +87,7 @@ const products: Product[] = [
         hasDisplayPort: true,
         hasHdmi: true,
         hasEthernet: true,
+        hasTypeC: true,
         hasMicrophone: false,
         hasHeadphoneJack: false,
         isAComputer: true,
@@ -109,6 +112,7 @@ const products: Product[] = [
         hasPowerCable: true,
         hasCharger: false,
         hasPsu: false,
+        hasTypeC: true,
         hasPowerAdapter: true,
         hasKeyboard: false,
         hasTouchPad: false,
@@ -138,6 +142,7 @@ const products: Product[] = [
         hasBluetooth: true,
         hasUsb: true,
         hasPowerCable: true,
+        hasTypeC: true,
         hasCharger: false,
         hasPsu: true,
         hasPowerAdapter: false,
