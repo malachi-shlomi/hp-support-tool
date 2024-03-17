@@ -11,6 +11,7 @@
 # production
 /build
 /template
+/hp-app
 
 # misc
 .DS_Store

@@ -220,7 +220,7 @@ const caseSlice = createSlice({
             state.navigation = 'res';
         },
         setPD: (state, action) => {
-            state.note.problemDesc = action.payload;;
+            state.note.problemDesc = action.payload;
         },
         setTS: (state, action) => {
             

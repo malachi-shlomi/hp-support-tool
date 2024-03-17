@@ -30,7 +30,7 @@ const products: Product[] = [
         isALaptop: true,
         hasPorts: true,
         hasTypeC: true,
-        hasNetworkPort: true
+        hasNetworkPort: true,
     },
     {
         productId: 2,

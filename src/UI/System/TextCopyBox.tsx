@@ -22,7 +22,7 @@ const TextCopyBox: FC<{ text: string }> = ({ text }) => {
       <div className='d-flex align-items-center icon h-100'>
         {copied ? <MdOutlineDone size={22} /> : <FaCopy className='text-muted'/>}
       </div>
-      <div>
+      <div className='overflow-hidden'>
         {text}
       </div>
     </div>

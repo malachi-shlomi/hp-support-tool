@@ -8,7 +8,10 @@ import SettingsPage from "../Settings/SettingsPage";
 import Navigator from "./Navigator";
 import TextPage from "../TextPage/TextPage";
 import ConsumerTemplate from "../ConsumerTemplate/ConsumerTemplate";
-import MnrTool from "../MNR/MnrTool";
+import Tools from "../tools/Tools";
+import Donate from "../Donate/Donate";
+import MNRPage from "../Mnr/MNRPage";
+// import MnrTool from "../MNR/MnrTool";
 
 function TsContainer() {
     const { navigation, history } = useSelector((state: any) => state.case);
@@ -26,8 +29,10 @@ function TsContainer() {
         { dependancy: ['res'], element: <ResolutionPage /> },
         { dependancy: ['settings'], element: <SettingsPage /> },
         { dependancy: ['notePage'], element: <TextPage /> },
+        { dependancy: ['tools'], element: <Tools /> },
+        { dependancy: ['mnr'], element: <MNRPage /> },
+        { dependancy: ['donate'], element: <Donate /> },
         { dependancy: ['consumerTemplate'], element: <ConsumerTemplate /> },
-        { dependancy: ['mnr'], element: <MnrTool /> },
     ];
 
     return (

@@ -7,15 +7,9 @@ const Problem = () => {
     const { problemDesc } = useSelector((state: any) => state.case.note)
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        if (!problemDesc) {
-            dispatch(setPD('PC issue'))
-        }
-    }, [])
-
     return (
         <div className='d-flex flex-column w-100 gap-1'>
-            <div className='title'>Problem Description</div>
+            {/* <div className='title'>Problem Description</div> */}
             <input className='border res-page-item'
                 type='text'
                 placeholder='Problem description'

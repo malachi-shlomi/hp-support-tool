@@ -9,6 +9,7 @@ const Troubleshooting = () => {
 
     const placeholder = nav === 'products' ? 'You can also, start typing here' : 'Troubleshooting'
 
+    
     return (
         <div className='d-flex flex-column w-100 gap-1'>
             <div className='title'>Troubleshooting</div>

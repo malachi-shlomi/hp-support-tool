@@ -1,6 +1,7 @@
 import React from 'react';
 import { Issue, Part } from '../../lib/interfaces';
 import { useDispatch } from 'react-redux';
+import { motion } from 'framer-motion';
 
 type Item = Issue | Part;
 
@@ -17,9 +18,13 @@ const OptionsButton: React.FC<Props> = ({item, action}) => {
   };
 
   return (
+    // <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }}>
+
     <div className='option-button item' onClick={() => handleClick(item)}>
+
       {item.desc}
     </div>
+    // </motion.div>
   );
 };
 

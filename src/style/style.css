@@ -697,3 +697,79 @@ textarea{
 .submit-api-key{
     /* width: 100px; */
   }
+
+.category-title{
+  font-size: 22px;
+}
+
+.item-title{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.tool-category{
+  width: 700px;
+}
+
+.tool-value{
+  font-size: 20px;
+}
+
+.arrow-icon{
+  font-size: 20px;
+  transition: transform 0.3s ease-in-out;
+
+  &.open{
+    transform: rotate(180deg);
+  }
+}
+
+.tool-box{
+  max-height: 0px;
+  transition: all 0.4s ease;
+
+  &.open{
+    max-height: 1000px;
+  }
+}
+
+.donate{
+  font-size: 20px;
+}
+
+.small-text{
+  font-size: 16px;
+}
+
+.mnr-search-con{
+  width: 500px;
+  max-width: 100%;
+
+  & input{
+    padding: 10px 15px;
+  }
+}
+
+.codes {
+  overflow: hidden;
+  transition: max-height 0.3s ease; /* Use max-height instead of height */
+  max-height: 0; /* Initially set max-height to 0 */
+}
+
+.codes.open {
+  max-height: 405px;
+  overflow-y: auto;
+}
+
+
+.mnr-input:focus{
+  outline: none;
+}
+
+.result{
+  padding: 10px 15px;
+
+  &:hover{
+    background-color: var(--active-bg);
+  }
+}

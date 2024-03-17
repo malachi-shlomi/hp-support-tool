@@ -31,6 +31,7 @@ export interface Product {
     hasTypeC?: boolean;
     hasBeepCode?: boolean;
     hasNetworkPort?: boolean;
+    variations?: string[];
 }
 
 export interface Part {
@@ -65,7 +66,8 @@ export interface Part {
     canWorkWithOtherCables?: boolean,
     canBeFixByDisablingSoundEnhancements?: boolean,
     hasShutter?: boolean,
-    canBeFixByFirmwareUpdate?: boolean
+    canBeFixByFirmwareUpdate?: boolean,
+    variations? : string[]
 }
 
 export interface Properties {

@@ -12,6 +12,7 @@ const parts: Part[] = [
         canBeFixWithDDU: true,
         canBeFixByFormat: true,
         canWorkWithOtherCables: true,
+        variations: ["screen", "display"]
     },
     {   desc: "Keyboard",
         productDependancies: ["hasKeyboard"],
@@ -20,6 +21,7 @@ const parts: Part[] = [
         hasKeys: true,
         canBeCheckedInDiagnostic: true,
         canBeFixByFormat: true,
+        variations: ["keyboard", "kb"]
     },
     {   desc: "Touchpad",
         productDependancies: ["hasTouchPad"],
@@ -68,7 +70,7 @@ const parts: Part[] = [
                 canBeCheckedInDiagnostic: true,
                 canBeFixByBIOSUpdate: true,
                 canWorkWithOtherCables: true,
-                plural: true
+                plural: true,
             },
             {   desc: "USB",  
                 productDependancies: ["hasUsb"],
@@ -115,7 +117,8 @@ const parts: Part[] = [
         canBeFixWithDriverUpdate: true,
         canBeFixByFormat: true,
         canDisconnect: true,
-        canBeCheckedInOtherNetworks: true
+        canBeCheckedInOtherNetworks: true,
+        variations: ["wifi", 'wi-fi']
     },
     {   desc: "Bluetooth",
         productDependancies: ["hasBluetooth"],
@@ -132,6 +135,7 @@ const parts: Part[] = [
         canBeCheckedInDiagnostic: true,
         canBeFixByFormat: true,
         canStopWorkInSpecificsApps: true,
+        variations: ["microphone", "mic"]
     },
     {   desc: "Fan",
         productDependancies: ["hasFan"],

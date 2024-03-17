@@ -7,7 +7,7 @@ const ResolutionPage = () => {
     return (
         <div className='d-flex flex-column res-page gap-4 h-100'>
             <div className='page-title text-muted'>Case</div>
-            <Problem />
+            <Problem /> 
             <Resolution />
             <SubmitButtons />
         </div>
